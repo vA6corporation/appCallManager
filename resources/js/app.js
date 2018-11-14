@@ -13,8 +13,16 @@ import {routes} from './routes';
 import Vuex from 'vuex';
 var VueResource = require('vue-resource');
 import store from './store';
+import Snotify from 'vue-snotify'; // 1. Import Snotify
+// 2. Use Snotify
+// You can pass {config, options} as second argument. See the next example or setConfig in [API] section
 
 
+Vue.use(Snotify, {
+  toast: {
+    timeout: 5000
+  }
+});
 Vue.use(Vuex);
 Vue.use(VueResource);
 Vue.use(VueRouter);

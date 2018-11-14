@@ -29,8 +29,9 @@ export default {
         this.$emit('update');
         $('.modal').modal('hide');
         console.log(response);
-      }, respones => {
+      }, response => {
         console.log(response);
+        this.$snotify.error(response.body.err);
       })
     }
   }

@@ -27,8 +27,11 @@ class PlaceController extends Controller
     public function store(Request $request)
     {
       $place = new Place($request->place);
-      $place->save();
-      return ['place' => $place];
+      if ($place->save()) {
+        return response(['place' => $place], 200);
+      } else {
+        return response(['place' => $place], 400);
+      }
     }
 
     /**

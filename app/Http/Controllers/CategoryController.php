@@ -27,8 +27,11 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $category = new Category($request->category);
-        $category->save();
-        return ['category' => $category];
+        if ($category->save()) {
+          return response(['category' => $category], 200);
+        } else {
+          return response(['err' => $category->err], 400);
+        }
     }
 
     /**

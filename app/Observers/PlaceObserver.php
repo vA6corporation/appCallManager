@@ -15,12 +15,13 @@ class PlaceObserver
 
     public function creating(Place $place)
     {
-      $place = Place::where($place->toArray())->first();
-      if ($place) {
+      $doc = Place::where($place->toArray())->first();
+      if ($doc) {
+        $place->err = "Ya existe un lugar con el mismo nombre: {$place->name}";
         return false;
       }
     }
-    
+
     public function created(Place $place)
     {
         error_log('Creamos');

@@ -10,6 +10,8 @@ class Place extends Model
       'name'
   ];
 
+  public $err;
+
   public static function boot() {
     parent::boot();
     parent::observe(new \App\Observers\PlaceObserver);

@@ -31,6 +31,7 @@ export default {
         console.log(response);
       }, respones => {
         console.log(response);
+        this.$snotify.error(response.body.err);
       })
     }
   }

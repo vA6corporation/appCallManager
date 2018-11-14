@@ -27,8 +27,11 @@ class SelectionController extends Controller
     public function store(Request $request)
     {
         $selection = new Selection($request->selection);
-        $selection->save();
-        return ['selection' => $selection];
+        if ($selection->save()) {
+          return response(['selection' => $selection], 200);
+        } else {
+          return response(['selection' => $selection], 400);
+        }
     }
 
     /**

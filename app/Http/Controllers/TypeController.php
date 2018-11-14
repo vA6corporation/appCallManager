@@ -27,8 +27,11 @@ class TypeController extends Controller
     public function store(Request $request)
     {
         $type = new Type($request->type);
-        $type->save();
-        return ['type' => $type];
+        if ($type->save()) {
+          return response(['type' => $type], 200);
+        } else {
+          return response(['err' => $type->err], 400);
+        }
     }
 
     /**

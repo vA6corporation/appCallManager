@@ -84,6 +84,7 @@
     <div class="container-fluid">
       @auth
         <router-view></router-view>
+        <vue-snotify></vue-snotify>
       @endauth
       @yield('content')
     </div>
