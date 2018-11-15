@@ -17,16 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::post('/maintenances/storePlace', 'MaintenanceController@storePlace');
-// Route::post('/maintenances/storeType', 'MaintenanceController@storeType');
-// Route::post('/maintenances/storeSelection', 'MaintenanceController@storeSelection');
-// Route::post('/maintenances/storeCategory', 'MaintenanceController@storeCategory');
-
 Route::apiResources([
   'types' => 'TypeController',
   'places' => 'PlaceController',
   'selections' => 'SelectionController',
   'categories' => 'CategoryController',
+  'users' => 'UserController',
+  'privileges' => 'PrivilegeController',
 ]);
 
 

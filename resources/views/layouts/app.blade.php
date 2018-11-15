@@ -31,6 +31,7 @@
           <router-link class="dropdown-item" to='/callControl'>CallCenter</router-link>
           <router-link class="dropdown-item" to='/business'>Empresas</router-link>
           <router-link class="dropdown-item" to='/maintenance'>Mantenimiento</router-link>
+          <router-link class="dropdown-item" to='/user'>Usuarios y permisos</router-link>
           {{-- <a class="dropdown-item" href="#"></a> --}}
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
